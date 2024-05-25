@@ -1,10 +1,10 @@
-import Collections from '@/Components/Collections'
-import Footer from '@/Components/Footer'
-import Hero from '@/Components/Hero'
-import Navbar from '@/Components/Navbar'
-import NewsLetter from '@/Components/NewsLetter'
-import SpecialOffer from '@/Components/SpecialOffer'
-import TrendingProduct from '@/Components/TrendingProduct'
+import Collections from '@/components/Collections'
+import Footer from '@/components/Footer'
+import Hero from '@/components/Hero'
+import Navbar from '@/components/Navbar'
+import NewsLetter from '@/components/NewsLetter'
+import SpecialOffer from '@/components/SpecialOffer'
+import TrendingProduct from '@/components/TrendingProduct'
 import React from 'react'
 
 const page = () => {
