@@ -5,7 +5,8 @@ import Navbar from '@/components/Navbar'
 import NewsLetter from '@/components/NewsLetter'
 import SpecialOffer from '@/components/SpecialOffer'
 import TrendingProduct from '@/components/TrendingProduct'
-import React from 'react'
+ 
+
 
 const page = () => {
   return (

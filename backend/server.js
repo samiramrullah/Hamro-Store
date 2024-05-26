@@ -1,12 +1,8 @@
 const http=require('http');
-
-const server=http.createServer((req,res,next)=>{
-  res.writeHead(200, { 'Content-Type': 'application/json' });
-  res.end(JSON.stringify({
-    data: 'Hello World!',
-  }));
-})
-
+const app=require('./app')
+require('dotenv').config();
+const server=http.createServer(app)
+const port=process.env
 server.listen(5000,()=>{
     console.log(`Running on port 5000`);
 })
