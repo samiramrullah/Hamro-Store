@@ -5,6 +5,7 @@ interface CartItem {
   name: string;
   price: number;
   quantity: number;
+  image:string;
 }
 
 interface CartState {
@@ -31,9 +32,9 @@ const cartSlice = createSlice({
   reducers: {
     addItem: (state, action: PayloadAction<CartItem>) => {
       const { id, name, price, quantity } = action.payload;
-      const itemIndex = state.items.findIndex(item => item.id === id);
-      if (itemIndex >= 0) {
-        state.items[itemIndex].quantity += quantity;
+      const existingItem = state.items.find(item => item.id === id);
+      if (existingItem) {
+        existingItem.quantity += quantity;
       } else {
         state.items.push(action.payload);
       }
@@ -48,9 +49,10 @@ const cartSlice = createSlice({
       state.totalPrice = totalPrice;
     },
     updateQuantity: (state, action: PayloadAction<{ id: number; quantity: number }>) => {
-      const item = state.items.find(item => item.id === action.payload.id);
-      if (item) {
-        item.quantity = action.payload.quantity;
+      const { id, quantity } = action.payload;
+      const itemToUpdate = state.items.find(item => item.id === id);
+      if (itemToUpdate) {
+        itemToUpdate.quantity = quantity;
         const { totalItems, totalPrice } = calculateTotals(state.items);
         state.totalItems = totalItems;
         state.totalPrice = totalPrice;

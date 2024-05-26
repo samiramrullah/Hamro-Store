@@ -12,7 +12,8 @@ const ProductCard = (props:ProductInterface) => {
           id: props.id,
           name: props.title,
           price: props.price,
-          quantity: 1
+          quantity: 1,
+          image:props.image
         }));
       };
      
