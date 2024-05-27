@@ -1,4 +1,6 @@
+import { addItem, removeItem, updateQuantity } from '@/redux/slice/CartSlice';
 import React from 'react'
+import {  useDispatch } from 'react-redux';
 
 interface cartInterface{
     id:number;
@@ -7,7 +9,21 @@ interface cartInterface{
     price:number;
     image:string;
 }
-const CartCard = (props:cartInterface) => {    
+
+const CartCard = (props:cartInterface) => {   
+    const dispatch=useDispatch() 
+    const addTocart=()=>{
+        dispatch(addItem(props))
+    }
+    const removeFromCart=()=>{
+        dispatch(removeItem(props.id))
+    }
+    const updateCart=()=>{
+        dispatch(updateQuantity({
+            id:props.id,
+            quantity:props.quantity,
+        }))
+    }
     return (
         <div className="py-5 sm:py-8">
             <div className="flex flex-wrap gap-4 sm:py-2.5 lg:gap-6">
@@ -40,19 +56,19 @@ const CartCard = (props:cartInterface) => {
                 <div className="flex w-full justify-between border-t pt-4 sm:w-auto sm:border-none sm:pt-0">
                     <div className="flex flex-col items-start gap-2">
                         <div className="flex h-12 w-20 overflow-hidden rounded border">
-                            <input type="number" value="1" className="w-full px-4 py-2 outline-none ring-inset ring-indigo-300 transition duration-100 focus:ring" />
+                            <div   className="w-full px-4 py-2 outline-none ring-inset ring-indigo-300 transition duration-100 focus:ring">{props?.quantity}</div>
 
                             <div className="flex flex-col divide-y border-l">
-                                <button className="flex w-6 flex-1 select-none items-center justify-center bg-white leading-none transition duration-100 hover:bg-gray-100 active:bg-gray-200">+</button>
-                                <button className="flex w-6 flex-1 select-none items-center justify-center bg-white leading-none transition duration-100 hover:bg-gray-100 active:bg-gray-200">-</button>
+                                <button onClick={addTocart} className="flex w-6 flex-1 select-none items-center justify-center bg-white leading-none transition duration-100 hover:bg-gray-100 active:bg-gray-200">+</button>
+                                <button onClick={updateCart} className="flex w-6 flex-1 select-none items-center justify-center bg-white leading-none transition duration-100 hover:bg-gray-100 active:bg-gray-200">-</button>
                             </div>
                         </div>
 
-                        <button className="select-none text-sm font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700">Delete</button>
+                        <button onClick={removeFromCart} className="select-none text-sm font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700">Delete</button>
                     </div>
 
                     <div className="ml-4 pt-3 sm:pt-2 md:ml-8 lg:ml-16">
-                        <span className="block font-bold text-gray-800 md:text-lg">Rs{props.price}</span>
+                        <span className="block font-bold text-gray-800 md:text-lg">Rs{(props.price)}</span>
                     </div>
                 </div>
             </div>
