@@ -2,7 +2,7 @@ import { addItem, removeItem, updateQuantity } from '@/redux/slice/CartSlice';
 import React from 'react'
 import {  useDispatch } from 'react-redux';
 
-interface cartInterface{
+ export interface cartInterface{
     id:number;
     name:string;
     quantity:number;
@@ -35,19 +35,16 @@ const CartCard = (props:cartInterface) => {
                 <div className="flex flex-1 flex-col justify-between">
                     <div>
                         <a href="#" className="mb-1 inline-block text-lg font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-xl">Top</a>
-
                         <span className="block text-gray-500">Size: S</span>
                         <span className="block text-gray-500">Color: White</span>
                     </div>
-
                     <div>
-                        <span className="mb-1 block font-bold text-gray-800 md:text-lg">Rs{(props.price)*(props.quantity)}</span>
+                        <span className="mb-1 block font-bold text-gray-800 md:text-lg">Rs{(props.price).toFixed(3)}</span>
 
                         <span className="flex items-center gap-1 text-sm text-gray-500">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                             </svg>
-
                             In stock
                         </span>
                     </div>
@@ -68,7 +65,7 @@ const CartCard = (props:cartInterface) => {
                     </div>
 
                     <div className="ml-4 pt-3 sm:pt-2 md:ml-8 lg:ml-16">
-                        <span className="block font-bold text-gray-800 md:text-lg">Rs{(props.price)}</span>
+                        <span className="block font-bold text-gray-800 md:text-lg">Rs{(props.price)*(props.quantity)}</span>
                     </div>
                 </div>
             </div>
