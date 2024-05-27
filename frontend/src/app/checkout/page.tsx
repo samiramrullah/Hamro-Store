@@ -4,7 +4,7 @@ import { RootState } from '@/redux/store'
 import Navbar from '@/components/Navbar'
 import CheckoutCard from '@/utils/cards/CheckoutCard'
 
-const page = () => {
+const Page = () => {
   const cart=useSelector((state:RootState)=>state.cart);
   return (
     <>
@@ -86,4 +86,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
