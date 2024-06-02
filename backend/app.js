@@ -1,22 +1,23 @@
 const express = require('express');
 const morgan = require('morgan');
+const mongoose=require('mongoose')
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
 
-const { initializeFirebaseApp } = require('./firebase');
 const authRoute = require('./api/routes/auth');
+const productRoute=require('./api/routes/product')
 
 const app = express();
 
 app.use(morgan('dev'));
 
-// Firebase connection
-const firebaseApp = initializeFirebaseApp();
-if (firebaseApp === "Error Connecting to Firebase") {
-  console.error("Failed to initialize Firebase. Exiting...");
-  process.exit(1);
-}
+//db connection
+mongoose.connect(process.env.ConnectionString).then(() => {
+  console.log('Connected to Database')
+})
+.catch((err) => console.log(err))
+mongoose.Promise = global.Promise;
 
 // CORS
 app.use((req, res, next) => {
@@ -26,11 +27,15 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/api/user', authRoute);
-
 // Parsing the body
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+app.use('/uploads', express.static('uploads'));
+
+app.use('/api/user', authRoute);
+app.use('/api/product',productRoute)
+
 
 // Error Handling
 
