@@ -29,7 +29,7 @@ const CartCard = (props:cartInterface) => {
             <div className="flex flex-wrap gap-4 sm:py-2.5 lg:gap-6">
                 <div className="sm:-my-2.5">
                     <a href="1" className="group relative block h-40 w-24 overflow-hidden rounded-lg bg-gray-100 sm:h-56 sm:w-40">
-                        <img src={props?.image} loading="lazy" alt="Image" className="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                        <img src={`https://hamro-store.onrender.com/${props.image}`} loading="lazy" alt="Image" className="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
                     </a>
                 </div>
                 <div className="flex flex-1 flex-col justify-between">
