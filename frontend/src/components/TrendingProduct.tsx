@@ -16,7 +16,7 @@ const TrendingProduct = () => {
     <div className="grid gap-x-4 gap-y-8 sm:grid-cols-2 md:gap-x-6 lg:grid-cols-3 xl:grid-cols-4">
       {/* <!-- product - start --> */}
       <div>
-        <a href="#" className="group relative mb-2 block h-96 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:mb-3">
+        <a href="1" className="group relative mb-2 block h-96 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:mb-3">
           <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&q=75&fit=crop&crop=top&w=600&h=700" loading="lazy" alt="Photo by Austin Wade" className="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
           <div className="absolute bottom-2 left-0 flex gap-2">
@@ -27,7 +27,7 @@ const TrendingProduct = () => {
 
         <div className="flex items-start justify-between gap-2 px-2">
           <div className="flex flex-col">
-            <a href="#" className="text-lg font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-xl">Fancy Outfit</a>
+            <a href="1" className="text-lg font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-xl">Fancy Outfit</a>
             <span className="text-gray-500">by Fancy Brand</span>
           </div>
 
@@ -41,13 +41,13 @@ const TrendingProduct = () => {
 
       {/* <!-- product - start --> */}
       <div>
-        <a href="#" className="group relative mb-2 block h-96 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:mb-3">
+        <a href="1" className="group relative mb-2 block h-96 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:mb-3">
           <img src="https://images.unsplash.com/photo-1523359346063-d879354c0ea5?auto=format&q=75&fit=crop&crop=top&w=600&h=700" loading="lazy" alt="Photo by Nick Karvounis" className="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
         </a>
 
         <div className="flex items-start justify-between gap-2 px-2">
           <div className="flex flex-col">
-            <a href="#" className="text-lg font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-xl">Cool Outfit</a>
+            <a href="1" className="text-lg font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-xl">Cool Outfit</a>
             <span className="text-gray-500">by Cool Brand</span>
           </div>
 
@@ -60,13 +60,13 @@ const TrendingProduct = () => {
 
       {/* <!-- product - start --> */}
       <div>
-        <a href="#" className="group relative mb-2 block h-96 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:mb-3">
+        <a href="1" className="group relative mb-2 block h-96 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:mb-3">
           <img src="https://images.unsplash.com/photo-1548286978-f218023f8d18?auto=format&q=75&fit=crop&crop=top&w=600&h=700" loading="lazy" alt="Photo by Austin Wade" className="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
         </a>
 
         <div className="flex items-start justify-between gap-2 px-2">
           <div className="flex flex-col">
-            <a href="#" className="text-lg font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-xl">Nice Outfit</a>
+            <a href="1" className="text-lg font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-xl">Nice Outfit</a>
             <span className="text-gray-500">by Nice Brand</span>
           </div>
 
@@ -75,17 +75,14 @@ const TrendingProduct = () => {
           </div>
         </div>
       </div>
-      {/* <!-- product - end --> */}
-
-      {/* <!-- product - start --> */}
       <div>
-        <a href="#" className="group relative mb-2 block h-96 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:mb-3">
+        <a href="1" className="group relative mb-2 block h-96 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:mb-3">
           <img src="https://images.unsplash.com/photo-1566207274740-0f8cf6b7d5a5?auto=format&q=75&fit=crop&crop=top&w=600&h=700" loading="lazy" alt="Photo by Vladimir Fedotov" className="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
         </a>
 
         <div className="flex items-start justify-between gap-2 px-2">
           <div className="flex flex-col">
-            <a href="#" className="text-lg font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-xl">Lavish Outfit</a>
+            <a href="1" className="text-lg font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-xl">Lavish Outfit</a>
             <span className="text-gray-500">by Lavish Brand</span>
           </div>
 

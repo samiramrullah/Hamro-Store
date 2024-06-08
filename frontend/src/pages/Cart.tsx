@@ -1,17 +1,12 @@
-'use client'
-import React from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux'
-import CartCard from '@/utils/cards/CartCard'
-import { RootState } from '@/redux/store';
-import Navbar from '@/components/Navbar';
-import Link from 'next/link';
+import CartCard from '../utils/cards/CartCard';
+import { RootState } from '../redux/store';
 
-const page = () => {
+const Cart = () => {
     const cart = useSelector((state: RootState) => state.cart)
-
     return (
         <>
-           <Navbar/>
             <div className="bg-white py-6 sm:py-8 lg:py-12">
                 <div className="mx-auto max-w-screen-lg px-4 md:px-8">
                     <div className="mb-6 sm:mb-10 lg:mb-16">
@@ -48,11 +43,10 @@ const page = () => {
                             </div>
                         </div>
                     </div>
-                    <Link href={'/checkout'} className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">Check out</Link>
+                    <Link to={'/checkout'} className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">Check out</Link>
                 </div>
             </div>
         </>
     )
 }
-
-export default page
+export default Cart

@@ -4,7 +4,7 @@ const CheckoutCard = (props:cartInterface) => {
     return (
         <div className="flex items-start gap-4">
             <div className="w-32 h-28 max-lg:w-24 max-lg:h-24 flex p-2 shrink-0 bg-gray-300 rounded-md">
-                <img src={props.image} className="w-full object-contain" />
+                <img src={props.image} className="w-full object-contain" alt={props.name}/>
             </div>
             <div className="w-full">
                 <h3 className="text-base text-white">{props.name}</h3>

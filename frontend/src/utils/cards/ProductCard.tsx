@@ -2,7 +2,7 @@
 import React from 'react'
 import { useAppDispatch } from '../../redux/store';
 import { addItem } from '../../redux/slice/CartSlice';
-import {ProductInterface} from '../../app/products/page'
+import { ProductInterface } from '../../pages/Product';
 
 const ProductCard = (props:ProductInterface) => {
     
@@ -20,12 +20,12 @@ const ProductCard = (props:ProductInterface) => {
           
     return (
         <div>
-            <a href="#" className="group relative mb-2 block h-80 overflow-hidden rounded-lg bg-gray-100 lg:mb-3">
+            <a href="1" className="group relative mb-2 block h-80 overflow-hidden rounded-lg bg-gray-100 lg:mb-3">
                 <img src={props.image} loading="lazy" alt={props?.title} className="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
                 <span className="absolute left-0 top-0 rounded-br-lg bg-red-500 px-3 py-1.5 text-sm uppercase tracking-wider text-white">sale</span>
             </a>
             <div className="flex flex-col">
-                <a href="#" className="hover:gray-800 mb-1 text-gray-500 transition duration-100 lg:text-lg">{props.title}</a>
+                <a href="1" className="hover:gray-800 mb-1 text-gray-500 transition duration-100 lg:text-lg">{props.title}</a>
                 <div className="flex items-center justify-between">
                     <div>
                         <span className="font-bold text-gray-800 lg:text-lg">{props.price}</span>

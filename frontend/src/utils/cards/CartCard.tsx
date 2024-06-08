@@ -1,4 +1,4 @@
-import { addItem, removeItem, updateQuantity } from '@/redux/slice/CartSlice';
+import { addItem,removeItem,updateQuantity } from '../../redux/slice/CartSlice';
 import React from 'react'
 import {  useDispatch } from 'react-redux';
 
@@ -28,13 +28,13 @@ const CartCard = (props:cartInterface) => {
         <div className="py-5 sm:py-8">
             <div className="flex flex-wrap gap-4 sm:py-2.5 lg:gap-6">
                 <div className="sm:-my-2.5">
-                    <a href="#" className="group relative block h-40 w-24 overflow-hidden rounded-lg bg-gray-100 sm:h-56 sm:w-40">
-                        <img src={props?.image} loading="lazy" alt="Photo by Thái An" className="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                    <a href="1" className="group relative block h-40 w-24 overflow-hidden rounded-lg bg-gray-100 sm:h-56 sm:w-40">
+                        <img src={props?.image} loading="lazy" alt="Image" className="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
                     </a>
                 </div>
                 <div className="flex flex-1 flex-col justify-between">
                     <div>
-                        <a href="#" className="mb-1 inline-block text-lg font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-xl">Top</a>
+                        <a href="1" className="mb-1 inline-block text-lg font-bold text-gray-800 transition duration-100 hover:text-gray-500 lg:text-xl">Top</a>
                         <span className="block text-gray-500">Size: S</span>
                         <span className="block text-gray-500">Color: White</span>
                     </div>

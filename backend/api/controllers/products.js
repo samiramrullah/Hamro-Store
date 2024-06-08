@@ -9,9 +9,7 @@ exports.addProduct = [
             const user = req.userData;
             if (user.email === "samiramrullah@gmail.com") {
                 const { name, price, description, category } = req.body;
-                
                 if (!name || !price || !category || !req.file) {
-                    console.log(req.body);
                     return res.status(400).json({ status: false, message: "Invalid Data" });
                 }
 
@@ -99,9 +97,7 @@ exports.deleteProduct = async (req, res, next) => {
 
         if (user.email === "samiramrullah@gmail.com") {
             const { productId } = req.params;
-
             const deletedProduct = await productSchema.findByIdAndDelete(productId);
-
             if (!deletedProduct) {
                 return res.status(404).json({ status: false, message: "Product not found" });
             }

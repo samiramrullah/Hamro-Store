@@ -1,14 +1,12 @@
 'use client'
 import { useSelector } from 'react-redux'
-import { RootState } from '@/redux/store'
-import Navbar from '@/components/Navbar'
-import CheckoutCard from '@/utils/cards/CheckoutCard'
+import { RootState } from '../redux/store'
+import CheckoutCard from '../utils/cards/CheckOutCard'
 
-const Page = () => {
+const CheckOut = () => {
   const cart=useSelector((state:RootState)=>state.cart);
   return (
     <>
-      <Navbar />
       <div className="font-sans bg-gray-100">
         <div className="flex max-sm:flex-col gap-4">
           <div className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 lg:min-w-[350px] sm:min-w-[300px] h-[70vh] overflow-y-scroll relative">
@@ -86,4 +84,4 @@ const Page = () => {
   )
 }
 
-export default Page
+export default CheckOut
