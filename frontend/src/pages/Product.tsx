@@ -7,13 +7,13 @@ interface Rating {
   }
   
   export interface ProductInterface {
-    id: number;
-    title: string;
+    _id: number;
+    name: string;
     price: number;
     description: string;
     category: string;
     image: string;
-    rating: Rating;
+    __v:number;
   }
 const Product = () => {
     const [allProducts,setAllProducts]=useState<ProductInterface[]>([])
@@ -21,7 +21,9 @@ const Product = () => {
         axios.get(`${process.env.REACT_APP_KEY}product/getallproducts`,{headers:{
             Authorization:'Bearer '+localStorage.getItem('token')
         }})
-        .then((res)=>setAllProducts(res.data))
+        .then((res)=>{
+            setAllProducts(res.data.products)
+        })
         .catch(err=>console.log(err))
       },[])
     return (
@@ -35,7 +37,7 @@ const Product = () => {
                 </div>
                 <div className="grid gap-x-4 gap-y-8 sm:grid-cols-2 md:gap-x-6 lg:grid-cols-3 xl:grid-cols-4">
                     {allProducts?.map(product=>(
-                        <ProductCard id={product.id} title={product.title} image={product.image} price={product.price} rating={product.rating} description={product.description} category={product.category}/>
+                        <ProductCard _id={product._id} name={product.name} image={product.image} price={product.price}  description={product.description} category={product.category} __v={product.__v}/>
                     ))}
                 </div>
             </div>

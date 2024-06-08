@@ -7,6 +7,7 @@ exports.addProduct = [
     async (req, res, next) => {
         try {
             const user = req.userData;
+            console.log("here");
             if (user.email === "samiramrullah@gmail.com") {
                 const { name, price, description, category } = req.body;
                 if (!name || !price || !category || !req.file) {
