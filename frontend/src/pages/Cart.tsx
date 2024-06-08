@@ -49,7 +49,7 @@ const Cart = () => {
                 </div>
             </div>:(
                <div className='w-full h-4/5'>
-                 <img className="w-full h-full object-fill" src={emptycart}></img>
+                 <img className="w-full h-full object-fill" src={emptycart} alt='Empty Cart'/>
                </div>
             )}
         </>
