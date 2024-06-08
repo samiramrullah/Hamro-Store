@@ -18,7 +18,9 @@ interface Rating {
 const Product = () => {
     const [allProducts,setAllProducts]=useState<ProductInterface[]>([])
     useEffect(()=>{
-        axios.get("https://fakestoreapi.com/products")
+        axios.get(`${process.env.REACT_APP_KEY}product/getallproducts`,{headers:{
+            Authorization:'Bearer '+localStorage.getItem('token')
+        }})
         .then((res)=>setAllProducts(res.data))
         .catch(err=>console.log(err))
       },[])
