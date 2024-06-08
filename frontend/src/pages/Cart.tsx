@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 import CartCard from '../utils/cards/CartCard';
 import { RootState } from '../redux/store';
-import emptycart from '../assets/Empty_Shopping_Cart_blog.webp'
+import emptycart from '../assets/Empty_Shopping_Cart_blog.jpg'
 
 const Cart = () => {
     const cart = useSelector((state: RootState) => state.cart)
