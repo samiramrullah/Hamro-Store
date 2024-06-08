@@ -5,9 +5,10 @@ import { RootState } from '../redux/store';
 
 const Cart = () => {
     const cart = useSelector((state: RootState) => state.cart)
+    
     return (
         <>
-            <div className="bg-white py-6 sm:py-8 lg:py-12">
+            {cart.items.length>0?<div className="bg-white py-6 sm:py-8 lg:py-12">
                 <div className="mx-auto max-w-screen-lg px-4 md:px-8">
                     <div className="mb-6 sm:mb-10 lg:mb-16">
                         <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">Your Cart</h2>
@@ -45,7 +46,11 @@ const Cart = () => {
                     </div>
                     <Link to={'/checkout'} className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">Check out</Link>
                 </div>
-            </div>
+            </div>:(
+               <div className='w-full h-full'>
+                 <img className="w-full h-full object-fill" src='https://www.vinsolutions.com/wp-content/uploads/sites/2/vinsolutions/media/Vin-Images/news-blog/Empty_Shopping_Cart_blog.jpg'></img>
+               </div>
+            )}
         </>
     )
 }
