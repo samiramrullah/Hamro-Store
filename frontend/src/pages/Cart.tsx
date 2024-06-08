@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 import CartCard from '../utils/cards/CartCard';
 import { RootState } from '../redux/store';
+import emptycart from '../assets/Empty_Shopping_Cart_blog.webp'
 
 const Cart = () => {
     const cart = useSelector((state: RootState) => state.cart)
@@ -47,8 +48,8 @@ const Cart = () => {
                     <Link to={'/checkout'} className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">Check out</Link>
                 </div>
             </div>:(
-               <div className='w-full h-full'>
-                 <img className="w-full h-full object-fill" src='https://www.vinsolutions.com/wp-content/uploads/sites/2/vinsolutions/media/Vin-Images/news-blog/Empty_Shopping_Cart_blog.jpg'></img>
+               <div className='w-full h-4/5'>
+                 <img className="w-full h-full object-fill" src={emptycart}></img>
                </div>
             )}
         </>
