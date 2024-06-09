@@ -140,9 +140,8 @@ exports.viewProductById = async (req, res, next) => {
 exports.viewAllProducts = async (req, res, next) => {
     try {
         const products = await productSchema.find();
-
         return res.status(200).json({
-            status: true,
+           
             products
         });
     } catch (error) {

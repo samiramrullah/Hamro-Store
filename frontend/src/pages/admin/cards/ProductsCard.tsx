@@ -1,9 +1,12 @@
 import { ToastContainer, toast } from 'react-toastify'
 import { ProductInterface } from '../AllProducts'
 import axios from 'axios'
+import { fetchProducts } from '../../../redux/slice/ProductSlice'
+import { useDispatch } from 'react-redux'
+import { AppDispatch } from '../../../redux/store'
 
 const ProductsCard = (props: ProductInterface) => {
-
+  const dispatch = useDispatch<AppDispatch>();
   const deleteProduct = () => {
     axios.delete(`${process.env.REACT_APP_KEY}product/deleteproductbyid?productId=${props._id}`,{headers:{
       Authorization:'Bearer '+localStorage.getItem('token')
@@ -11,6 +14,7 @@ const ProductsCard = (props: ProductInterface) => {
       .then((res) => {
         if (res.data.status) {
           toast.success(res.data.message, { position: 'top-right' })
+          dispatch(fetchProducts());
         }
       })
       .catch((err) => {
