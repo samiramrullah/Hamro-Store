@@ -10,7 +10,8 @@ const productSchema = new mongoose.Schema({
         enum: ['Electronics', 'Beauty', 'Clothing', 'Home and Kitchen', 'Miscellaneous'],
         required: true
     },
-    image: { type: String, required: true } 
+    image: { type: String, required: true } ,
+    quantity: { type: Number, required: true }
 });
 
 module.exports = mongoose.model('Product', productSchema);

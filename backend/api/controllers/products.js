@@ -8,8 +8,8 @@ exports.addProduct = [
         try {
             const user = req.userData;
             if (user.email === "samiramrullah@gmail.com") {
-                const { name, price, description, category } = req.body;
-                if (!name || !price || !category || !req.file) {
+                const { name, price, description, category,quantity } = req.body;
+                if (!name || !price || !category || !quantity || !req.file) {
                     return res.status(400).json({ status: false, message: "Invalid Data" });
                 }
 
@@ -24,7 +24,8 @@ exports.addProduct = [
                     price,
                     description,
                     category,
-                    image: req.file.path // Save the image path
+                    image: req.file.path,
+                    quantity
                 });
 
                 const savedProduct = await newProduct.save();
