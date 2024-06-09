@@ -5,7 +5,8 @@ const checkAuth=require('../middleware/check-auth');
 
 
 router.post('/addproduct',checkAuth ,productController.addProduct);
-router.get('/getallproducts',checkAuth,productController.viewAllProducts)
+router.get('/getallproducts',checkAuth,productController.viewAllProducts);
+router.delete('/deleteproductbyid',checkAuth,productController.deleteProduct)
 
 
 

@@ -9,6 +9,7 @@ const AddProduct = () => {
     price: '',
     description: '',
     category: '',
+    quantity:'',
     image: null as File | null,
   });
 
@@ -47,6 +48,14 @@ const AddProduct = () => {
     .then((res) => {
       if (res.data.status) {
         toast.success(res.data.message, { position: 'top-right' });
+        setFormState({
+          name: '',
+          price: '',
+          description: '',
+          category: '',
+          quantity:'',
+          image:  null,
+        })
       }
     })
     .catch((err) => {
@@ -68,6 +77,7 @@ const AddProduct = () => {
               name='name'
               required
               onChange={onChangehandler}
+              value={formState.name}
             />
           </div>
           <div>
@@ -77,6 +87,17 @@ const AddProduct = () => {
               required
               type='number'
               onChange={onChangehandler}
+              value={formState.price}
+            />
+          </div>
+          <div>
+            <label className="text-gray-700">Quantity *</label>
+            <input className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md"
+              name='quantity'
+              required
+              type='number'
+              onChange={onChangehandler}
+              value={formState.quantity}
             />
           </div>
           <div>
@@ -86,12 +107,14 @@ const AddProduct = () => {
               required
               type='text'
               onChange={onChangehandler}
+              value={formState.description}
             />
           </div>
           <div>
             <label className="text-gray-700">Category *</label>
             <select name='category' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md"
               required 
+              value={formState.category}
               onChange={onChangehandler}>
               <option value="" disabled selected>Select a category</option>
               {categories.map(category => (

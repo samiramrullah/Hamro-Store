@@ -95,9 +95,8 @@ exports.updateProduct = [
 exports.deleteProduct = async (req, res, next) => {
     try {
         const user = req.userData;
-
         if (user.email === "samiramrullah@gmail.com") {
-            const { productId } = req.params;
+            const { productId } = req.query;
             const deletedProduct = await productSchema.findByIdAndDelete(productId);
             if (!deletedProduct) {
                 return res.status(404).json({ status: false, message: "Product not found" });
